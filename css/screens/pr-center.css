@@ -1,0 +1,71 @@
+.pr-items {
+    margin: 80px 0px 140px 0px;
+}
+.pr-items .wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 50px;
+}
+.pr-item__date {
+    font-size: 14px;
+    color: rgb(161, 161, 161);
+    font-weight: 400;
+    margin: 6px 0px;
+}
+.pr-item__title {
+    font-size: 19px;
+    font-weight: 500;
+}
+.pr-item {
+    
+}
+.pr-item img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+.pr-item svg{
+    opacity: 0;
+}
+.pr-item:hover svg{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+/*--------- 서브페이지 --------*/
+.coverage .pr-items .wrap, .news .pr-items .wrap, .contribution .pr-items .wrap{
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+}
+.coverage img, .news img, .contribution img{
+    height: 240px;
+}
+
+.category{
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+}
+.category li{
+    border: 1px rgb(205, 205, 205) solid;
+    border-radius: var(--border-radius);
+    padding: 10px 24px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+.category li.active{
+    background-color: var(--main-color);
+    color: white;
+    border:none;
+}
+
+.pr-items
+{ display: none; }
+.pr-items.con_active
+{ display: flex; }
+
+.page-name
+{ display: none; }
+.page-name.name_active
+{ display: flex; }

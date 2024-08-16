@@ -1,0 +1,116 @@
+header {
+    width: 100vw;
+    height: 110px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow:none;
+}
+.header-active-bg {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.43);
+    display: none;
+    backdrop-filter: blur(1px);
+    transition: all 0.3s ease-in-out;
+}
+.header-wrap{
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 75px;
+    box-sizing: border-box;
+}
+.header-logo {
+    width: 150px;
+}
+.header-gnb {
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+}
+.header-gnb li {
+    width: 130px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.5s ease-in-out;
+}
+.header-1depth{
+    display: block;
+    margin: 40px 0px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.header-underline {
+    width: 0px;
+    height: 2.5px;
+    background-color: var(--main-color);
+    position: relative;
+    top: -38px;
+    transition: width 0.5s ease-in-out;
+}
+.header-2depth {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+.header-2depth a {
+    margin-bottom: 14px;
+}
+.header-inquery{
+    display: flex;
+    justify-content: flex-end
+    ;
+    height: 32px;
+    margin-left: 70px;
+}
+.header-inquery a {
+    display: flex;
+    align-items: center;
+}
+
+/*----------- header--whtie --------------*/
+.header--whtie{
+    color: white;
+}
+
+
+/*----------- hover -----------
+header:hover {
+    height: 290px;
+}
+.header-gnb li:hover {
+}
+.header-2depth a:hover i{
+}
+*/
+
+.header-gnb li:hover .header-underline {
+    width: 70px;
+    transition: width 0.3s ease-in-out;
+}
+
+header:hover .header-gnb li {
+    width: 220px;
+    height: 290px;
+    }
+.header-inquery:hover{
+    color: var(--main-color);
+}
+.header-2depth a:hover {
+    color: var(--main-color);
+    font-weight: 500;
+}
+.header-1depth:hover {
+    color: var(--main-color);
+}

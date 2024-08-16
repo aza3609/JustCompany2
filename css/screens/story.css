@@ -1,0 +1,63 @@
+
+.story p {
+    margin-top: 20px;
+    font-weight: 400;
+    color: rgb(117, 117, 117);
+    font-size: 18px;
+}
+.story-img {
+    width: var(--main-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.436);
+    margin-top: 60px;
+    margin-bottom: 120px;
+    width: 100%;
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+.story-mission3 .story-img{
+    margin-bottom: 0px;
+}
+.story-bg{
+    width: 100vw;
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.story-top .story-img {
+    height: 500px;
+    width: 100vw;
+}
+.story-mission1 .story-img, .story-mission2 .story-img,.story-mission3 .story-img{
+    height: 450px;
+    width: 100vw;
+}
+.story-top__logo {
+    width: 300px;
+    transform: translateY(50px);
+}
+.story-svg {
+    width: 450px;
+    transform: translateY(50px);
+}
+
+/*-------- 애니메이션 ---------*/
+.story .view-spy {
+    opacity: 0;
+}
+.story-svg.show, .story-top__logo.show{
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.8s ease-in-out;
+}
+.story .show{
+    animation-name: ShowDown;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}

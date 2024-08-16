@@ -1,0 +1,25 @@
+.vision-title h2{
+    margin-bottom: 12px;
+}
+.vision-title h3{
+    font-size: 38px;
+    color: var(--main-color);
+}
+.vision-row {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    margin-top: 80px;
+    
+}
+.vision-row img{
+    padding: 60px;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    width: 100%;
+    justify-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 6px 18px;
+
+}
+.vision-row:last-child {
+    margin-bottom: 140px;
+}

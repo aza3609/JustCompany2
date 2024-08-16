@@ -1,0 +1,117 @@
+.history-content {
+    width: 100vw;
+    position: relative;
+    padding: 140px 0px;
+    box-sizing: border-box;
+    margin-top: 80px;
+    color: rgb(40, 40, 40);
+}
+.history-content .wrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0px 60px;
+    box-sizing: border-box;
+
+}
+.history-content__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.history-content__top p{
+    color: rgb(62, 62, 62);
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.history-bg {
+    background-color: rgb(249, 252, 255);
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    z-index: -2;
+}
+.history-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+}
+.history-column1 {
+    font-size: 54px;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    color: var(--main-color);
+    position: relative;
+    top:-12px
+}
+.history-column1 div:nth-child(2){
+    color:#0028793e;
+}
+.history-column2 {
+    position: relative;
+}
+.history-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 3fr;
+    margin-bottom: 70px;
+}
+.history-row:last-child {
+    margin-bottom: 0px;
+}
+.history-text, .history-year{
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 0.8s ease-in-out;
+}
+.history-year {
+    font-size: 28px;
+    color: var(--main-color);
+    justify-self: flex-end;
+    font-weight: 900;
+}
+.history-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 24px;
+    background-color: rgb(57, 125, 184);
+    justify-self: center;
+    position: relative;
+    top:12px
+}
+.history-dot div{
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    z-index: 2;
+    border-radius: 10px;
+
+}
+.history-text__month {
+    font-size: 20px;
+    font-weight: 600;
+}
+.history-text__content {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.history-line {
+    height: 100%;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.266);
+    position: absolute;
+    left: 41.5%;
+    top: -20px;
+}
+/*------- 애니메이션 -------*/
+.history .show {
+    opacity: 1;
+    transform: translateY(0px);
+}

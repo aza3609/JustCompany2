@@ -1,0 +1,35 @@
+.about-items {
+    margin: 80px 0px 140px 0px;
+}
+.about-items .wrap{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.about-item {
+    position: relative;
+    height: 280px;
+    color: white;
+    padding: 32px;
+    box-sizing: border-box;
+}
+.about-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--border-radius);
+    z-index: -2;
+}
+.about-item p{
+    font-size: 18px;
+}
+.about-item svg{
+    opacity: 0;
+}
+.about-item:hover svg{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}

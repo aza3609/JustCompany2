@@ -1,0 +1,130 @@
+/*reset*/
+@import "reset.css";
+
+/*variables*/
+@import "variables.css";
+
+/*components*/
+@import "components/header.css";
+@import "components/footer.css";
+
+/*screens*/
+@import "screens/main.css";
+@import "screens/about-us.css";
+@import "screens/story.css";
+@import "screens/history.css";
+@import "screens/vision.css";
+@import "screens/ir.css";
+@import "screens/brand.css";
+@import "screens/pr-center.css";
+
+/*font*/
+
+* {
+    font-family: "Pretendard", sans-serif;
+    line-height: 1.5;
+  }
+
+  body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Pretendard", sans-serif;
+    line-height: 1.45;
+    color: rgb(52, 52, 52);
+  }
+  section {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap {
+    width: var(--main-width);
+  }
+  .bold {
+    font-weight: 600;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 34px;
+    color: var(--main-color);
+  }
+  h3{
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  h4 {
+    font-weight: 600;
+    font-size: 28px;
+  }
+  h5{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  h6{
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  p {
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .main-btn {
+    display: flex;
+    align-items: center;
+    color: rgb(140, 140, 140);
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+  
+  }
+  .main-btn:hover {
+    color: var(--main-color);
+  }
+
+.bread-crumb {
+  display: flex;
+  align-items: center;
+  width: var(--main-width);
+  color: rgb(104, 104, 104);
+  font-size: 14px;
+  margin-top: 200px;
+  margin-bottom: 40px;
+}
+.bread-crumb span {
+  color: rgb(196, 196, 196);
+  font-size: 20px;
+}
+
+  /*-------- 애니메이션 --------*/
+
+  .show {
+  }
+
+  @keyframes Show{
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ShowDown{
+    from {
+      transform: translateY(150px);
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+

@@ -1,0 +1,336 @@
+body {
+}
+
+.main h2{
+    color: var(--main-color);
+}
+.main-top{
+    height: 100vh;
+    width: 100vw;
+    color: white;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.128);
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.main-top img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main-top h2 {
+    color: white;
+}
+.main-top h3{
+    font-size: 60px;
+}
+.main-top h3 span {
+    font-weight: 300;
+
+  }
+.main-top a {
+    display: flex;
+    align-items: center;
+}
+.main-top a:hover {
+    font-weight: 600;
+}
+.main-top__order {
+    display: flex;
+    position: absolute;
+    bottom: 50px;
+    right: 45%;
+}
+.main-top__order div {
+    width: 14px;
+    height: 14px;
+    border: 1px white solid;
+    border-radius: 8px;
+    margin-right: 14px;
+}
+.main-top__order div.active {
+    width: 46px; 
+    background-color: white;
+}
+
+
+
+.main-about {
+    padding: 140px 0px 80px 0px;
+    box-sizing: border-box;
+}
+.main-about__manu {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 370px;
+    color: white;
+    text-align: start;
+    margin: 60px 0px;
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.023);
+}
+.main-about__manu a {
+    display: flex;
+    flex-direction: column;
+    /*
+    background: linear-gradient(0deg, var(--main-color), var(--main-color) 20%,#00287900);*/
+    padding: 40px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.main-about__manu a:nth-child(1) img{
+    border-radius: var(--border-radius) 0px 0px var(--border-radius);
+}
+.main-about__manu a:nth-child(4) img{
+    border-radius: 0px var(--border-radius) var(--border-radius) 0px;
+}
+.main-about__manu img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+.main-about__manu p {
+    font-size: 17px;
+    margin: 4px 0px 12px 0px;   
+   }
+.main-about__manu div{
+    height: 34px;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+}
+.main-about__manu a:hover div{
+    height: 130px;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+}
+.main-about__manu span {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+
+.main-brands {
+    position: relative;
+    padding: 140px 0px 100px 0px;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+}
+.main-brands__li {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 80px;
+    overflow: hidden;
+    height: 360px;
+
+}
+.main-brands__li img{
+    width: 20vw;
+    height: 240px;
+    object-fit: cover;
+    margin: 0px 1.5vw;
+    box-shadow: rgba(100, 100, 111, 0.743) 0px 13px 30px 0px;
+    border-radius: var(--border-radius);
+}
+.main-brands__li div:nth-child(2n){
+    position: relative;
+    top: 70px;
+}
+.main-brands__li div:nth-child(2n+1){
+    position: relative;
+    top: 20px;
+}
+
+
+.main-pr {
+    padding: 140px 0px 80px 0px;
+    box-sizing: border-box;
+}
+.main-pr__menu {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+    height: 450px;
+    margin: 60px 0px;
+    
+}
+.main-pr__menu a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.244);
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+.main-pr__menu img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 0.5s ease-in-out;
+    border-radius: var(--border-radius);
+
+}
+.main-pr__menu a:hover img {
+    transform: scale(1.15);
+}
+
+.main-pr__menu div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--main-color);
+    /*-- transform: translateX(-100%);--*/
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+.main-pr__menu a:hover div{
+    transform: translateY(0px);
+    opacity: 0.5;
+}
+
+.main-inquery {
+    background-color: var(--main-color);
+    color: white;
+    padding-top: 140px;
+    box-sizing: border-box;
+}
+.main-inquery h2{
+    color: white;
+}
+.main-inquery a:hover {
+    color: white;
+}
+.main-inquery__img {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: var(--main-width);
+    height: 450px;
+    margin-top: 40px;
+    background-color: black;
+    z-index: 2;
+    transition: all 1s ease-in-out;
+    bottom: 0;
+    animation: none;
+}
+.main-inquery__img p{
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.main-inquery__img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6;
+}
+.main-inquery__img a{
+    color:white;
+}
+
+/*------- 애니메이션 ----------*/
+.main .show{
+    animation-name: Show; 
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/*---- 대문이미지 -----*/
+.main-top img.animationActive{
+    animation-name: shrinkImg;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-delay:0s;
+}
+
+@keyframes shrinkImg {
+    from{
+        transform: scale(1.3);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+.main .view-spy {
+    opacity: 0;
+}
+/*---- 브랜드 좌우이동 -----*/
+.main-brands__li div{
+    animation-name: brandMove;
+    animation-duration: 20s;
+    animation-fill-mode:inherit;
+    animation-iteration-count: infinite;
+  }
+  @keyframes brandMove{
+    from {
+      transform: translateX(-130px);
+    }
+    to {
+      transform: translateX(130px);
+    }
+  }
+
+  .main-top h3 {
+    animation-delay:0.3s ;
+  }
+  .main-top a{
+    animation-delay:0.6s ;
+  }
+  .main-top h3.show span {
+    opacity: 0;
+    animation-name: textAppear;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-fill-mode:forwards;
+  }
+  @keyframes textAppear {
+    from{
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+/*---- 문의하기 -----*/
+.main-inquery__img.view-spy {
+    opacity: 1;
+    animation: none;
+    transform: translateY(0px);
+}
+.main-inquery__img.show{
+    width: 100vw;
+    opacity: 1;
+}
