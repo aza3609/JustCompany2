@@ -1,12 +1,11 @@
 header {
-    width: 100vw;
-    height: 110px;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    overflow: hidden;
     z-index: 3;
     box-shadow:none;
+    
 }
 .header-active-bg {
     position: fixed;
@@ -14,31 +13,33 @@ header {
     height: 100vh;
     width: 100vw;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.43);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    backdrop-filter: blur(1px);
-    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(2px);
 }
 .header-wrap{
     height: 110px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0px 75px;
+    align-items: flex-start;
+    padding: 0px 50px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 .header-logo {
-    width: 150px;
+    width: 140px;
+    margin-top: 20px;
 }
 .header-gnb {
-    height: 110px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     position: relative;
     top: 0;
 }
-.header-gnb li {
+.header-li {
     width: 130px;
+    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -53,11 +54,13 @@ header {
 }
 .header-underline {
     width: 0px;
-    height: 2.5px;
+    height: 2px;
+    border-radius: 2px;
     background-color: var(--main-color);
-    position: relative;
-    top: -38px;
+    position: fixed;
+    top: 70px;
     transition: width 0.5s ease-in-out;
+    z-index: 3;
 }
 .header-2depth {
     display: flex;
@@ -69,16 +72,73 @@ header {
 }
 .header-inquery{
     display: flex;
-    justify-content: flex-end
-    ;
+    justify-content: flex-end;
+    width: fit-content;
     height: 32px;
-    margin-left: 70px;
+    margin-top: 40px;
+    margin-left: 100px;
+
 }
 .header-inquery a {
     display: flex;
     align-items: center;
 }
+.hamburger-btn{
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    z-index: 4;
+    width: 24px;
+    height: 24px;
+    }
 
+.header--whtie .hamburger-btn{
+    color: white;
+}
+.hamburger-nav{
+    color: black;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    z-index: 3;
+    padding: 30px 40px 0px 40px;
+    box-sizing: border-box;
+    height: 100%;
+}
+.hamburger-nav .header-1depth{
+    margin: 12px 0px;
+    font-size: 17px;
+}
+
+.hamburger-nav .header-2depth a{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.hamburger-nav a{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+.hamburger-nav a:hover svg{
+    display: flex;
+}
+.hamburger-nav svg{
+    height: 18px;
+    width: 18px;
+    display: none;
+}
+.hamburger-nav .header-1depth svg{
+    width: 22px;
+    height: 22px;
+}
+.hamburger-nav li:last-child {
+    font-size: 15px;
+    margin-top: 16px;
+}
 /*----------- header--whtie --------------*/
 .header--whtie{
     color: white;
@@ -95,14 +155,13 @@ header:hover {
 }
 */
 
-.header-gnb li:hover .header-underline {
+.header-li:hover .header-underline {
     width: 70px;
     transition: width 0.3s ease-in-out;
 }
 
 header:hover .header-gnb li {
-    width: 220px;
-    height: 290px;
+    width: 190px;
     }
 .header-inquery:hover{
     color: var(--main-color);
@@ -114,3 +173,56 @@ header:hover .header-gnb li {
 .header-1depth:hover {
     color: var(--main-color);
 }
+
+/*--------- 햄버거 ----------*/
+
+.hamburger-nav.active {
+    display: flex;
+}
+.hamburger-btn.active{
+    color: black;;
+}
+header.active .header-wrap{
+    display: none;
+}
+
+/*--------- 반응형 ----------*/
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1000px){
+    .header-wrap{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-gnb{
+        flex-direction: column;
+        display: none;
+    }
+    .hamburger-btn{
+        margin-top: 20px;
+        display: flex;
+    }
+    .header-inquery{
+        display: none;
+     }
+  }
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+    .header-wrap{
+        padding: 0px 24px;
+  }
+  .hamburger-btn{
+   right: 24px;
+}
+  }
+  /* 모바일 세로 (해상도 ~ 479px)*/ 
+  @media all and (max-width:479px) {
+    .header-wrap{
+        padding: 0px 16px;
+  } 
+  .hamburger-btn{
+    right: 16px;
+}
+  }
+   
+  

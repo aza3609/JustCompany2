@@ -1,7 +1,6 @@
 const tab = document.querySelectorAll(".category-li");
 const con = document.querySelectorAll(".pr-items");
 const pageName = document.querySelectorAll(".page-name");
-const nav = document.querySelectorAll(".pr-nav");
 
 tab.forEach(function(tab_btn, index){
     tab_btn.addEventListener('click',function(){
@@ -21,10 +20,3 @@ tab.forEach(function(tab_btn, index){
     });
   });
   
-
-nav.forEach(function(nav_btn, index){
-    nav_btn.addEventListener('click',function(){
-        console.log([index]);
-    });
-});
-

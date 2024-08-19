@@ -15,6 +15,7 @@
 @import "screens/history.css";
 @import "screens/vision.css";
 @import "screens/ir.css";
+@import "screens/business.css";
 @import "screens/brand.css";
 @import "screens/pr-center.css";
 
@@ -33,6 +34,8 @@
     font-family: "Pretendard", sans-serif;
     line-height: 1.45;
     color: rgb(52, 52, 52);
+    word-break: keep-all;
+    
   }
   section {
     width: 100vw;
@@ -46,6 +49,9 @@
   }
   .bold {
     font-weight: 600;
+  }
+  a {
+    cursor: pointer;
   }
   h2 {
     font-size: 24px;
@@ -76,8 +82,8 @@
     font-weight: 200;
   }
   .main-btn {
+    width:fit-content;
     display: flex;
-    align-items: center;
     color: rgb(140, 140, 140);
     font-size: 18px;
     font-weight: 600;
@@ -95,7 +101,7 @@
   color: rgb(104, 104, 104);
   font-size: 14px;
   margin-top: 200px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .bread-crumb span {
   color: rgb(196, 196, 196);
@@ -103,9 +109,6 @@
 }
 
   /*-------- 애니메이션 --------*/
-
-  .show {
-  }
 
   @keyframes Show{
     from {
@@ -128,3 +131,84 @@
   }
 
 
+/*--------- 반응형 ----------*/
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/ 
+@media all and (max-width:1200px){
+  .wrap {
+    width: 100%;
+    padding: 0px 50px;
+    box-sizing: border-box;
+  }
+}
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/ 
+@media all and (max-width:767px) {
+  .wrap {
+    width: 100%;
+    padding: 0px 24px;
+    box-sizing: border-box;
+  }
+  h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+  h3{
+    font-size: 38px;
+    margin-bottom: 18px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5{
+    font-size: 34px;
+  }
+  h6{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  p {
+    font-size: 17px;
+  }
+  .main-btn {
+    font-size: 15px;
+  }
+} 
+
+/* 모바일 세로 (해상도 ~ 479px)*/ 
+@media all and (max-width:479px) {
+  .wrap {
+    width: 100%;
+    padding: 0px 16px;
+    box-sizing: border-box;
+  }
+  h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  h3{
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5{
+    font-size: 34px;
+  }
+  h6{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  p {
+    font-size: 15px;
+  }
+  .main-btn {
+    font-size: 14px;
+  }
+}
+ 
+
+/*--------- 반응형 ----------
+@media all and (max-width:1200px){
+    @media all and (max-width:767px) {
+        @media all and (max-width:479px) {*/

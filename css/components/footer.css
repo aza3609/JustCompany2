@@ -3,7 +3,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     background-color: #1A1A1A;
     color: rgb(137, 137, 137);
     padding: 60px 0px;
@@ -50,4 +50,42 @@ footer {
 }
 .footer-bottom p {
     font-size: 15px;
+}
+
+/*--------- 반응형 ----------*/
+@media all and (max-width:1200px){
+}
+@media all and (max-width:767px) {
+    footer{
+        padding: 40px 0px;
+    }
+    .footer-top {
+        flex-direction: column-reverse;
+    }
+    .footer-top__left p:first-child {
+        font-size: 17px;
+    }
+    .footer-top__left p {
+        font-size: 14px;
+    }
+    .footer-top__right {
+        margin-bottom: 20px;
+    }
+    .footer-bottom a {
+        font-size: 15px;
+    }
+    .footer-bottom p {
+        font-size: 14px;
+    }
+    .footer-line {
+        margin: 20px 0px;
+    }
+}
+@media all and (max-width:479px) {
+    .footer-bottom {
+        flex-direction: column;
+    }
+    .footer-bottom__left{
+        margin-bottom: 6px;
+    }
 }

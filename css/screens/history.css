@@ -69,10 +69,10 @@
     transition: all 0.8s ease-in-out;
 }
 .history-year {
-    font-size: 28px;
+    font-size: 30px;
     color: var(--main-color);
     justify-self: flex-end;
-    font-weight: 900;
+    font-weight: 800;
 }
 .history-dot {
     display: flex;
@@ -100,7 +100,7 @@
 }
 .history-text__content {
     font-size: 18px;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 .history-line {
     height: 100%;

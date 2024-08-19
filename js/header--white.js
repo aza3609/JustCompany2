@@ -1,101 +1,155 @@
 const header = document.querySelector("header");
+const headerWrap = document.querySelector(".header-wrap");
 const headerLogo = document.querySelector(".header-logo img");
-const headerList1 = document.querySelector(".header-li--1");
-const headerList2 = document.querySelector(".header-li--2");
-const headerList3 = document.querySelector(".header-li--3");
+const headerGnb = document.querySelectorAll(".header-gnb");
+const headerList = document.querySelectorAll(".header-li");
+const hamburgerBtn = document.querySelector(".hamburger-btn");
+const hamburgerNav =document.querySelector(".hamburger-nav");
 
-headerList1.addEventListener('mouseover',function(){
-  headerList1.style.backgroundColor = "rgb(243, 243, 243)"
-})
-headerList1.addEventListener('mouseleave',function(){
-  headerList1.style.backgroundColor = "transparent"
-})
+headerList.forEach((target) => target.addEventListener("mouseover",
+  function(){
+    target.style.backgroundColor = "rgb(249, 249, 249)"
+window.addEventListener("scroll", function() {
+  let prevScrollTop = 0;
+  let nowScrollTop = window.scrollY;
+  if (nowScrollTop > prevScrollTop){
+    //스크롤 내림
+    headerWrap.style.height = "110px"
+  }
+  else if(nowScrollTop < prevScrollTop){
+    //스크롤 올림
+    headerWrap.style.transform = "translateY(0px)"
+    headerWrap.style.backgroundColor = "white"
+    headerWrap.style.color = "black"
+    headerLogo.src = "src/justcompany-logo.svg"
 
-headerList2.addEventListener('mouseover',function(){
-  headerList2.style.backgroundColor = "rgb(243, 243, 243)"
-})
-headerList2.addEventListener('mouseleave',function(){
-  headerList2.style.backgroundColor = "transparent"
-})
-
-headerList3.addEventListener('mouseover',function(){
-  headerList3.style.backgroundColor = "rgb(243, 243, 243)"
-})
-headerList3.addEventListener('mouseleave',function(){
-  headerList3.style.backgroundColor = "transparent"
-})
+    headerWrap.style.transition = "height 0s ease-in-out"
+    headerWrap.style.transition = "transform 1s ease-in-out"
+    headerWrap.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
+    document.querySelector(".header-active-bg").style.display ="none"
+  }
+  if (nowScrollTop < 20){
+  target.style.backgroundColor = "transparent" }
+  })
+}
+));
+headerList.forEach((target) => target.addEventListener("mouseleave",
+  function(){
+    target.style.backgroundColor = "transparent"
+  }
+));
 
 let prevScrollTop = 0;
 window.addEventListener("scroll", function() {
   let nowScrollTop = window.scrollY;
   if (nowScrollTop > prevScrollTop){
     //스크롤 내림
-        header.style.transform = "translateY(-110px)"
+    if(hamburgerNav.classList.contains("active")){
+    } else {
+      hamburgerBtn.style.transform = "translateY(-110px)"
+    }
+    headerWrap.style.transform = "translateY(-110px)"
         console.log('Down!');
-        header.style.height = "110px"
-        header.style.transition = "height 0s ease-in-out"
-        header.style.transition = "transform 0.7s ease-in-out"
-        header.style.boxShadow = "none"
+        headerWrap.style.height = "110px"
+        headerWrap.style.transition = "height 0s ease-in-out"
+        headerWrap.style.transition = "transform 0.7s ease-in-out"
+        hamburgerBtn.style.transition = "transform 0.7s ease-in-out"
+        headerWrap.style.boxShadow = "none"
   }
   else if(nowScrollTop < prevScrollTop){
     //스크롤 올림
-    header.style.transform = "translateY(0px)"
-    header.style.backgroundColor = "white"
-    header.style.color = "black"
-    console.log('Up!');
+        if(hamburgerNav.classList.contains("active")){
+        } else {
+          hamburgerBtn.style.transform = "translateY(0px)"
+          hamburgerBtn.src = "src/menu.svg"
+        }
+    headerWrap.style.transform = "translateY(0px)"
+    headerWrap.style.backgroundColor = "white"
+    headerWrap.style.color = "black"
     headerLogo.src = "src/justcompany-logo.svg"
-    header.style.height = "110px"
-    header.style.transition = "height 0s ease-in-out"
-    header.style.transition = "transform 0.7s ease-in-out"
-    header.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
+    headerWrap.style.transition = "height 0s ease-in-out"
+    hamburgerBtn.style.transition = "transform 0.7s ease-in-out"
+    headerWrap.style.transition = "transform 0.7s ease-in-out"
+    headerWrap.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
     document.querySelector(".header-active-bg").style.display ="none"
   }
     prevScrollTop = nowScrollTop;
 
     if (nowScrollTop < 20){
-      header.style.color = "white"
-      header.style.backgroundColor = 'transparent'
+      if(hamburgerNav.classList.contains("active")){
+      } else {
+        hamburgerBtn.src = "src/menu--white.svg"
+      }
+      headerWrap.style.color = "white"
+      headerWrap.style.backgroundColor = 'transparent'
       headerLogo.src = "src/justcompany-logo_white.svg"
-      headerList1.style.backgroundColor = 'transparent'
-      headerList2.style.backgroundColor = 'transparent'
-      headerList3.style.backgroundColor = 'transparent'
-      header.style.boxShadow = "none"
+      headerWrap.style.boxShadow = "none"
     }
   });
 
 
 
 function headerDropdown() {
-    header.classList.add("over");
-    header.style.color = "black"
-    header.style.backgroundColor = "white"
+  var windowWidth = window.innerWidth;
+  if(windowWidth>1000){
+    headerWrap.style.color = "black"
+    headerWrap.style.backgroundColor = "white"
     headerLogo.src = "src/justcompany-logo.svg"
     document.querySelector(".header-active-bg").style.display ="block"
-    
-    header.style.height = "290px"
+    headerWrap.style.height = "280px"
     header.style.transition = "height 0.7s ease-in-out"
+  }
 };
 
 function headerDropup() {
-  header.classList.remove("over");
   headerLogo.src = "src/justcompany-logo_white.svg"
-  header.style.height = "110px"
-  header.style.transition = "height 0s ease-in-out"
+  headerWrap.style.height = "110px"
+  headerWrap.style.transition = "height 0s ease-in-out"
   document.querySelector(".header-active-bg").style.display = "none"
   
   let nowScrollTop = window.scrollY;
   if (nowScrollTop < 20){
-    header.style.color = "white"
-    header.style.backgroundColor = 'transparent'
+    headerWrap.style.color = "white"
+    headerWrap.style.backgroundColor = 'transparent'
+    headerWrap.style.boxShadow = "none"
   }
   else {
     headerLogo.src = "src/justcompany-logo.svg"
   }
 };
 
+function headerClick(){
+  hamburgerNav.classList.toggle("active");
+  hamburgerBtn.classList.toggle("active");
+  hamburgerBtn.src = "src/x.svg"
+  if(hamburgerNav.classList.contains("active")){
+  } else {
+    hamburgerBtn.src = "src/menu--white.svg"
+  }
 
-header.addEventListener("mouseover", headerDropdown);
-header.addEventListener("mouseleave", headerDropup);
+}
+
+function headerResize(){
+  var windowWidth = window.innerWidth;
+  if(windowWidth>=1000){
+    hamburgerNav.classList.remove("active");
+    headerWrap.style.display = "flex";
+    hamburgerBtn.style.display = "none";
+}else{
+    header.classList.add("active");
+    hamburgerBtn.style.display = "flex";
+
+}
+if(hamburgerNav.classList.contains("active")){
+} else {
+  hamburgerBtn.src = "src/menu--white.svg"
+}
+}
+
+window.addEventListener("resize", headerResize)
+hamburgerBtn.addEventListener("click", headerClick);
+headerWrap.addEventListener("mouseover", headerDropdown);
+headerWrap.addEventListener("mouseleave", headerDropup);
 
 
 

@@ -8,13 +8,14 @@
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body onload="showImage()">
-    <header>
+    <header class="header">
+        
         <div class="header-wrap">
         <a class="header-logo" href="index.html">
            <img src="src/justcompany-logo.svg" alt="">
         </a>
         <ul class="header-gnb">
-            <li class="header-li--1">
+            <li class="header-li">
                 <a class="header-1depth" href="about-us.html">회사소개</a>
                 <div class="header-underline"></div>
                 <div class="header-2depth">
@@ -24,7 +25,7 @@
                     <a href="ir.html">IR</a>
                 </div>
             </li>
-            <li class="header-li--2">
+            <li class="header-li">
                 <a class="header-1depth" href="business.html">사업소개</a>
                 <div class="header-underline"></div>
                 <div class="header-2depth">
@@ -32,7 +33,7 @@
                     <a href="delivery.html">딜리버리</a>
                 </div>
             </li>
-            <li class="header-li--3"> 
+            <li class="header-li"> 
                 <a class="header-1depth" href="pr-center.html">홍보센터</a>
                 <div class="header-underline"></div>
                 <div class="header-2depth">
@@ -45,7 +46,43 @@
         <a  class="header-inquery" href="inquery.html">
             문의<i data-feather="arrow-up-right"></i>
         </a>
+
         </div>
+        <img class="hamburger-btn" src="src/menu.svg"> 
+
+        <ul class="hamburger-nav">
+            <li class="">
+                <a class="header-1depth" href="about-us.html">회사소개<i data-feather="arrow-up-right"></i></a>
+                <div class="header-underline"></div>
+                <div class="header-2depth">
+                    <a href="story.html">스토리<i data-feather="arrow-up-right"></i></a>
+                    <a href="vision.html">비전<i data-feather="arrow-up-right"></i></a>
+                    <a href="history.html">연혁<i data-feather="arrow-up-right"></i></a>
+                    <a href="ir.html">IR<i data-feather="arrow-up-right"></i></a>
+                </div>
+            </li>
+            <li class="">
+                <a class="header-1depth" href="business.html">사업소개<i data-feather="arrow-up-right"></i></a>
+                <div class="header-underline"></div>
+                <div class="header-2depth">
+                    <a href="brand.html">브랜드<i data-feather="arrow-up-right"></i></a>
+                    <a href="delivery.html">딜리버리<i data-feather="arrow-up-right"></i></a>
+                </div>
+            </li>
+            <li class=""> 
+                <a class="header-1depth" href="pr-center.html">홍보센터<i data-feather="arrow-up-right"></i></a>
+                <div class="header-underline"></div>
+                <div class="header-2depth">
+                    <a href="coverage.html">보도자료<i data-feather="arrow-up-right"></i></a>
+                    <a href="news.html">회사소식<i data-feather="arrow-up-right"></i></a>
+                    <a href="contribution.html">사회공헌<i data-feather="arrow-up-right"></i></a>
+                </div>
+            </li>
+            <li><a href="inquery.html">
+                문의하기<i data-feather="arrow-up-right"></i>
+            </a></li>
+        </ul>
+
     </header>
     <div class="header-active-bg"></div>
     <main class="pr-center">
@@ -55,7 +92,7 @@
                 <a href="index.html">홈</a><span>&ensp;•&ensp;</span><a>홍보센터</a>
             </div>    
             <h3>저스트컴퍼니의 다양한 소식을<br>
-                한  번에 만나볼 수 있습니다</h3>
+                한 번에 만나볼 수 있습니다.</h3>
             </div>
     </section>
     <section class="pr-items">
@@ -66,21 +103,21 @@
                 <p class="pr-item__date">2024-08-15</p>
                 <p class="pr-item__title">보도자료 타이틀 보도자료 타이틀 보도자료 타이틀</p>
             </a>
-            <a class="pr-item" href="new.html">
+            <a class="pr-item" href="news.html">
                 <h6>회사소식<i data-feather="arrow-up-right"></i></h6>
-                <img src="" alt="">
+                <img src="src/media-blank.svg" alt="">
                 <p class="pr-item__date">2024-08-15</p>
                 <p class="pr-item__title">회사소식 타이틀 회사소식 타이틀 회사소식 타이틀</p>
             </a>
             <a class="pr-item" href="contribution.html">
                 <h6>사회공헌<i data-feather="arrow-up-right"></i></h6>
-                <img src="" alt="">
+                <img src="src/media-blank.svg" alt="">
                 <p class="pr-item__date">2024-08-15</p>
                 <p class="pr-item__title">사회공헌 타이틀 사회공헌 타이틀 사회공헌 타이틀</p>
             </a>
             <a class="pr-item" href="">
                 <h6>홍보영상<i data-feather="arrow-up-right"></i></h6>
-                <img src="" alt="">
+                <img src="src/media-blank.svg" alt="">
                 <p class="pr-item__date">2024-08-15</p>
                 <p class="pr-item__title">홍보영상 타이틀 홍보영상 타이틀 홍보영상 타이틀</p>
             </a>

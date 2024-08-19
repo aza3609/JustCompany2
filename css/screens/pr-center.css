@@ -17,9 +17,6 @@
     font-size: 19px;
     font-weight: 500;
 }
-.pr-item {
-    
-}
 .pr-item img{
     width: 100%;
     height: 280px;
@@ -43,29 +40,25 @@
 }
 
 .category{
-    margin-top: 30px;
+    margin-top: 60px;
     display: flex;
     width: 100%;
 }
-.category li{
+.category a{
     border: 1px rgb(205, 205, 205) solid;
     border-radius: var(--border-radius);
-    padding: 10px 24px;
+    padding: 12px 24px;
     margin-right: 10px;
     font-size: 16px;
 }
-.category li.active{
+.category a.active{
     background-color: var(--main-color);
     color: white;
     border:none;
 }
-
-.pr-items
-{ display: none; }
-.pr-items.con_active
-{ display: flex; }
-
-.page-name
-{ display: none; }
-.page-name.name_active
-{ display: flex; }
+.coverage .pr-item:hover .pr-item__title,
+.news .pr-item:hover .pr-item__title,
+.contribution .pr-item:hover .pr-item__title
+ {
+    text-decoration: underline;
+}
