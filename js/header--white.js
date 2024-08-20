@@ -10,25 +10,10 @@ headerList.forEach((target) => target.addEventListener("mouseover",
   function(){
     target.style.backgroundColor = "rgb(249, 249, 249)"
 window.addEventListener("scroll", function() {
-  let prevScrollTop = 0;
-  let nowScrollTop = window.scrollY;
-  if (nowScrollTop > prevScrollTop){
-    //스크롤 내림
-    headerWrap.style.height = "105px"
-  }
-  else if(nowScrollTop < prevScrollTop){
-    //스크롤 올림
-    headerWrap.classList.remove("up");
-    headerWrap.style.backgroundColor = "white"
-    headerWrap.style.color = "black"
-    headerLogo.src = "src/justcompany-logo.svg"
 
-    headerWrap.style.transition = "height 0s ease-in-out"
-    headerWrap.style.transition = "transform 1s ease-in-out"
-    headerWrap.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
-    document.querySelector(".header-active-bg").style.display ="none"
-  }
-  if (nowScrollTop < 80){
+  let nowScrollTop = window.scrollY;
+
+  if (nowScrollTop < 20){
   target.style.backgroundColor = "transparent" }
   })
 }
@@ -75,7 +60,8 @@ window.addEventListener("scroll", function() {
   }
     prevScrollTop = nowScrollTop;
     console.log(nowScrollTop);
-    if (nowScrollTop < 80){
+    if (nowScrollTop < 20){
+      hamburgerBtn.classList.remove("up");
       if(hamburgerNav.classList.contains("active")){
       } else {
         hamburgerBtn.src = "src/menu--white.svg"
@@ -109,7 +95,7 @@ function headerDropup() {
   document.querySelector(".header-active-bg").style.display = "none"
   
   let nowScrollTop = window.scrollY;
-  if (nowScrollTop < 80){
+  if (nowScrollTop < 20){
     headerWrap.style.color = "white"
     headerWrap.style.backgroundColor = 'transparent'
     headerWrap.style.boxShadow = "none"
@@ -128,7 +114,7 @@ function headerClick(){
     hamburgerBtn.src = "src/menu.svg"
   }
   let nowScrollTop = window.scrollY;
-  if (nowScrollTop < 80){
+  if (nowScrollTop < 20){
     if(hamburgerNav.classList.contains("active")){
     } else {
       hamburgerBtn.src = "src/menu--white.svg"
@@ -147,7 +133,7 @@ function headerResize(){
     hamburgerBtn.style.display = "flex";
     hamburgerBtn.src = "src/menu.svg"
     let nowScrollTop = window.scrollY;
-    if (nowScrollTop < 60){
+    if (nowScrollTop < 20){
 hamburgerBtn.src = "src/menu--white.svg"
     }
 }

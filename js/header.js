@@ -9,21 +9,8 @@ headerList.forEach((target) => target.addEventListener("mouseover",
   function(){
     target.style.backgroundColor = "rgb(249, 249, 249)"
 window.addEventListener("scroll", function() {
-  let prevScrollTop = 0;
   let nowScrollTop = window.scrollY;
-  if (nowScrollTop > prevScrollTop){
-    //스크롤 내림
-    headerWrap.style.height = "110px"
-  }
-  else if(nowScrollTop < prevScrollTop){
-    //스크롤 올림
-    headerWrap.style.transform = "translateY(0px)"
-    headerWrap.style.backgroundColor = "white"
-    headerWrap.style.transition = "height 0s ease-in-out"
-    headerWrap.style.transition = "transform 1s ease-in-out"
-    headerWrap.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
-    document.querySelector(".header-active-bg").style.display ="none"
-  }
+
   if (nowScrollTop < 20){
   target.style.backgroundColor = "transparent" }
   })
@@ -42,11 +29,11 @@ window.addEventListener("scroll", function() {
     //스크롤 내림
     if(hamburgerNav.classList.contains("active")){
     } else {
-      hamburgerBtn.style.transform = "translateY(-110px)"
+      hamburgerBtn.classList.add("up")
     }
-    headerWrap.style.transform = "translateY(-110px)"
+    headerWrap.classList.add("up")
         console.log('Down!');
-        headerWrap.style.height = "110px"
+        headerWrap.style.height = "105px"
         headerWrap.style.transition = "height 0s ease-in-out"
         headerWrap.style.transition = "transform 0.7s ease-in-out"
         hamburgerBtn.style.transition = "transform 0.7s ease-in-out"
@@ -56,9 +43,9 @@ window.addEventListener("scroll", function() {
     //스크롤 올림
         if(hamburgerNav.classList.contains("active")){
         } else {
-          hamburgerBtn.style.transform = "translateY(0px)"
+          hamburgerBtn.classList.remove("up")
         }
-    headerWrap.style.transform = "translateY(0px)"
+    headerWrap.classList.remove("up")
     headerWrap.style.backgroundColor = "white"
     headerWrap.style.transition = "height 0s ease-in-out"
     hamburgerBtn.style.transition = "transform 0.7s ease-in-out"
@@ -90,7 +77,7 @@ function headerDropdown() {
 };
 
 function headerDropup() {
-  headerWrap.style.height = "110px"
+  headerWrap.style.height = "105px"
   headerWrap.style.transition = "height 0s ease-in-out"
   document.querySelector(".header-active-bg").style.display = "none"
   
