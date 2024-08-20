@@ -124,9 +124,15 @@ function headerClick(){
   hamburgerBtn.src = "src/x.svg"
   if(hamburgerNav.classList.contains("active")){
   } else {
-    hamburgerBtn.src = "src/menu--white.svg"
+    hamburgerBtn.src = "src/menu.svg"
   }
-
+  let nowScrollTop = window.scrollY;
+  if (nowScrollTop < 20){
+    if(hamburgerNav.classList.contains("active")){
+    } else {
+      hamburgerBtn.src = "src/menu--white.svg"
+    }
+  }
 }
 
 function headerResize(){
@@ -138,12 +144,13 @@ function headerResize(){
 }else{
     header.classList.add("active");
     hamburgerBtn.style.display = "flex";
+    hamburgerBtn.src = "src/menu.svg"
+    let nowScrollTop = window.scrollY;
+    if (nowScrollTop < 20){
+hamburgerBtn.src = "src/menu--white.svg"
+    }
+}
 
-}
-if(hamburgerNav.classList.contains("active")){
-} else {
-  hamburgerBtn.src = "src/menu--white.svg"
-}
 }
 
 window.addEventListener("resize", headerResize)
