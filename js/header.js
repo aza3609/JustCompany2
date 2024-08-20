@@ -58,7 +58,9 @@ window.addEventListener("scroll", function() {
     if (nowScrollTop < 20){
       if(hamburgerNav.classList.contains("active")){
       } else {
+        hamburgerBtn.classList.remove("up");
       }
+      headerWrap.classList.remove("up");
       headerWrap.style.backgroundColor = 'transparent'
       headerWrap.style.boxShadow = "none"
     }
