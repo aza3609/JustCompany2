@@ -14,11 +14,11 @@ window.addEventListener("scroll", function() {
   let nowScrollTop = window.scrollY;
   if (nowScrollTop > prevScrollTop){
     //스크롤 내림
-    headerWrap.style.height = "110px"
+    headerWrap.style.height = "105px"
   }
   else if(nowScrollTop < prevScrollTop){
     //스크롤 올림
-    headerWrap.style.transform = "translateY(0px)"
+    headerWrap.classList.remove("up");
     headerWrap.style.backgroundColor = "white"
     headerWrap.style.color = "black"
     headerLogo.src = "src/justcompany-logo.svg"
@@ -28,7 +28,7 @@ window.addEventListener("scroll", function() {
     headerWrap.style.boxShadow = "0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05)"
     document.querySelector(".header-active-bg").style.display ="none"
   }
-  if (nowScrollTop < 20){
+  if (nowScrollTop < 80){
   target.style.backgroundColor = "transparent" }
   })
 }
@@ -46,11 +46,11 @@ window.addEventListener("scroll", function() {
     //스크롤 내림
     if(hamburgerNav.classList.contains("active")){
     } else {
-      hamburgerBtn.style.transform = "translateY(-110px)"
+      hamburgerBtn.classList.add("up");
     }
-    headerWrap.style.transform = "translateY(-110px)"
+        headerWrap.classList.add("up");
         console.log('Down!');
-        headerWrap.style.height = "110px"
+        headerWrap.style.height = "105px"
         headerWrap.style.transition = "height 0s ease-in-out"
         headerWrap.style.transition = "transform 0.7s ease-in-out"
         hamburgerBtn.style.transition = "transform 0.7s ease-in-out"
@@ -60,10 +60,10 @@ window.addEventListener("scroll", function() {
     //스크롤 올림
         if(hamburgerNav.classList.contains("active")){
         } else {
-          hamburgerBtn.style.transform = "translateY(0px)"
+          hamburgerBtn.classList.remove("up");
           hamburgerBtn.src = "src/menu.svg"
         }
-    headerWrap.style.transform = "translateY(0px)"
+    headerWrap.classList.remove("up");
     headerWrap.style.backgroundColor = "white"
     headerWrap.style.color = "black"
     headerLogo.src = "src/justcompany-logo.svg"
@@ -74,12 +74,13 @@ window.addEventListener("scroll", function() {
     document.querySelector(".header-active-bg").style.display ="none"
   }
     prevScrollTop = nowScrollTop;
-
-    if (nowScrollTop < 20){
+    console.log(nowScrollTop);
+    if (nowScrollTop < 80){
       if(hamburgerNav.classList.contains("active")){
       } else {
         hamburgerBtn.src = "src/menu--white.svg"
       }
+      headerWrap.classList.remove("up");
       headerWrap.style.color = "white"
       headerWrap.style.backgroundColor = 'transparent'
       headerLogo.src = "src/justcompany-logo_white.svg"
@@ -103,12 +104,12 @@ function headerDropdown() {
 
 function headerDropup() {
   headerLogo.src = "src/justcompany-logo_white.svg"
-  headerWrap.style.height = "110px"
+  headerWrap.style.height = "105px"
   headerWrap.style.transition = "height 0s ease-in-out"
   document.querySelector(".header-active-bg").style.display = "none"
   
   let nowScrollTop = window.scrollY;
-  if (nowScrollTop < 20){
+  if (nowScrollTop < 80){
     headerWrap.style.color = "white"
     headerWrap.style.backgroundColor = 'transparent'
     headerWrap.style.boxShadow = "none"
@@ -127,7 +128,7 @@ function headerClick(){
     hamburgerBtn.src = "src/menu.svg"
   }
   let nowScrollTop = window.scrollY;
-  if (nowScrollTop < 20){
+  if (nowScrollTop < 80){
     if(hamburgerNav.classList.contains("active")){
     } else {
       hamburgerBtn.src = "src/menu--white.svg"
@@ -146,7 +147,7 @@ function headerResize(){
     hamburgerBtn.style.display = "flex";
     hamburgerBtn.src = "src/menu.svg"
     let nowScrollTop = window.scrollY;
-    if (nowScrollTop < 20){
+    if (nowScrollTop < 60){
 hamburgerBtn.src = "src/menu--white.svg"
     }
 }
@@ -179,3 +180,14 @@ function handleResize() {
 
 /* hamburgerBtn.addEventListener("click", headerToggle);
 window.addEventListener("resize", handleResize); */
+
+const isBounceScroll = (div) => {
+  if (reverse) { // scroll이 reverse(flex-direction: column-reverse) 모드일 때
+    if (div.scrollTop > 0) return true; // scroll 최하단을 뚫음
+    if (div.scrollTop < div.clientHeight - div.scrollHeight) return true; // scroll 최상단을 뚫음
+  } else { // 일반적인 스크롤 방향일 때
+    if (div.scrollTop < 0) return true; // scroll 최상단을 뚫음
+    if (div.scrollTop > div.scrollHeight - div.clientHeight) return true; // scroll 최하단을 뚫음
+  }
+  return false;
+}
